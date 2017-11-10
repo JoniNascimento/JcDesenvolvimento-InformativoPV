@@ -51,7 +51,7 @@ public class CRUD {
             cursor.moveToFirst();
             do{
                //Setar os valores no objeto e adicionar a lista (cursor.getTipo(indiceColuna));
-                
+
             }while(cursor.moveToNext());
         }
 
