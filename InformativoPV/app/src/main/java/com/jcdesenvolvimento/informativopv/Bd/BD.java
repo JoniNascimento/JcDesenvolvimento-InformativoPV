@@ -21,7 +21,23 @@ public class BD extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table nome tabela (_id integer primary key autoncrement, ....)");
+       // db.execSQL("create table nome tabela (_id integer primary key autoncrement, ....)");
+
+        db.execSQL("create table CadastroIgreja (_id integer primary key autoncrement, Descricao Text, Responsavel Text, Endereco Text, Bairro Text, Cidade Text, Estado Text, Logo Blob, Sobre Text)");
+
+        db.execSQL("create table Boeltim (_id integer primary key autoncrement, Mes integer, Palavra Text, Tema Text, Imagem Blob)");
+
+        db.execSQL("create table Escala (_id integer primary key autoncrement, id_Boletim integer, dia_mes integer, diretor Text, pregador Text, louvor Text, secretario_EB Text, Professor_EB Text, coordenador_EB Text, Patio Text, Tipo_Escala Text, Imagem Blob )"); //tipo escala - Oficial; Local; Regional
+
+        db.execSQL("create table PG (_id integer primary key autoncrement, local Text, dia_semana integer, Endereco Text, bairro Text, Cidade Text, estado text, responsavel text )");
+
+        db.execSQL("create table Dpto_Ministerio (_id integer primary key autoncrement, id_igreja integer, descricao Text, )");
+
+        db.execSQL("create table MembroDpto (_id integer primary key autoncrement, id_membro integer, id_dpto integer)");
+
+        db.execSQL("create table Pessoa (_id integer primary key autoncrement, Nome Text, nascimento date)");
+
+        db.execSQL("create table telefone (_id integer primary key autoncrement, id_cliente integer, ddd integer, telefone text, )");
 
     }
 
