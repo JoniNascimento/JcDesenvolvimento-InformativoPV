@@ -12,18 +12,19 @@ public class Boletim {
     private int iMes;
     private String sPalavra;
     private String sTema;
-    private Blob iImagem;
+    private byte[] iImagem;
 
     public Boletim() {
     }
 
-    public Boletim(int iId, int iMes, String sPalavra, String sTema, Blob iImagem) {
+    public Boletim(int iId, int iMes, String sPalavra, String sTema, byte[] iImagem) {
         this.iId = iId;
         this.iMes = iMes;
         this.sPalavra = sPalavra;
         this.sTema = sTema;
         this.iImagem = iImagem;
     }
+
 
     public int getiId() {
         return iId;
@@ -57,11 +58,11 @@ public class Boletim {
         this.sTema = sTema;
     }
 
-    public Blob getiImagem() {
+    public byte[] getiImagem() {
         return iImagem;
     }
 
-    public void setiImagem(Blob iImagem) {
+    public void setiImagem(byte[] iImagem) {
         this.iImagem = iImagem;
     }
 }

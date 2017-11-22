@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.jcdesenvolvimento.informativopv.Model.Boletim;
 import com.jcdesenvolvimento.informativopv.Model.Igreja;
 
 import java.util.ArrayList;
@@ -17,12 +18,13 @@ import java.util.List;
 public class CRUD {
     private SQLiteDatabase bd ;
 
-    //CadIgreja
+
     public CRUD(Context ctx){
         BD auxBd = new BD(ctx);
         bd = auxBd.getWritableDatabase();
     }
 
+    //CadIgreja
     public  void insertCadIgreja (Igreja objeto){
         //Classe para passar valores para o db
         ContentValues valores = new ContentValues();
@@ -77,6 +79,8 @@ public class CRUD {
                 objIgreja.setbLogo(cursor.getBlob(6));
                 objIgreja.setsSobre(cursor.getString(7));
 
+                list.add(objIgreja);
+
 
             }while(cursor.moveToNext());
         }
@@ -87,6 +91,62 @@ public class CRUD {
 
     }
     //CadIgreja
+
+
+
+    //Boletim
+    public  void insertBoletim (Boletim objeto){
+        //Classe para passar valores para o db
+        ContentValues valores = new ContentValues();
+        valores.put("Mes", objeto.getiMes());
+        valores.put("Palavra", objeto.getsPalavra().toString());
+        valores.put("Imagem", objeto.getiImagem());
+
+        bd.insert("Boletim",null,valores);
+
+    }
+
+    public void atualizaBoletim(Boletim objeto){
+        ContentValues valores = new ContentValues();
+        valores.put("Mes", objeto.getiMes());
+        valores.put("Palavra", objeto.getsPalavra().toString());
+        valores.put("Imagem", objeto.getiImagem());
+
+        bd.update("Boletim",valores,"_id="+objeto.getiId(),null);
+    }
+
+    public void deletarBoletim(Boletim objeto){
+        bd.delete("Boletim", "_id"+objeto.getiId(),null);
+    }
+
+    public List<Boletim> buscarBoletim(){
+        List<Boletim> list = new ArrayList<Boletim>();
+        String[] colunas = new String[]{"_id","Mes", "Palavra", "Imagem"}; //String de colunas da busca
+
+        Cursor cursor = bd.query("Boletim",colunas,null,null,null,null,"");
+
+        if (cursor.getCount() > 0 ){
+            cursor.moveToFirst();
+            do{
+                Boletim objBoletim = new Boletim();
+                //Setar os valores no objeto e adicionar a lista (cursor.getTipo(indiceColuna));
+                objBoletim.setiId(cursor.getInt(0));
+                objBoletim.setiMes(cursor.getInt(1));
+                objBoletim.setsPalavra(cursor.getString(2));
+                objBoletim.setiImagem(cursor.getBlob(3));
+
+                list.add(objBoletim);
+
+
+            }while(cursor.moveToNext());
+        }
+
+
+
+        return list;
+
+    }
+    //Boletim
 
 
 
