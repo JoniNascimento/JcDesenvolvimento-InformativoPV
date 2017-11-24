@@ -18,12 +18,13 @@ public class Escala {
     private String sCoordenador_EB;
     private String sPatio;
     private String sTipo_Escala;
-    private Blob iImagem;
+    private byte[] iImagem;
 
-    public Escala() {
+    public Escala(){
+
     }
 
-    public Escala(int iId, int iId_Boletim, int iDia_mes, String sDiretor, String sPregador, String sLouvor, String sSecretario_EB, String sProfessor_EB, String sCoordenador_EB, String sPatio, String sTipo_Escala, Blob iImagem) {
+    public Escala(int iId, int iId_Boletim, int iDia_mes, String sDiretor, String sPregador, String sLouvor, String sSecretario_EB, String sProfessor_EB, String sCoordenador_EB, String sPatio, String sTipo_Escala, byte[] iImagem) {
         this.iId = iId;
         this.iId_Boletim = iId_Boletim;
         this.iDia_mes = iDia_mes;
@@ -126,11 +127,11 @@ public class Escala {
         this.sTipo_Escala = sTipo_Escala;
     }
 
-    public Blob getiImagem() {
+    public byte[] getiImagem() {
         return iImagem;
     }
 
-    public void setiImagem(Blob iImagem) {
+    public void setiImagem(byte[] iImagem) {
         this.iImagem = iImagem;
     }
 }

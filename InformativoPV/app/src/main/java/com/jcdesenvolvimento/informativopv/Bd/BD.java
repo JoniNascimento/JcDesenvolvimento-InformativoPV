@@ -27,7 +27,7 @@ public class BD extends SQLiteOpenHelper {
 
         db.execSQL("create table Boletim (_id integer primary key autoncrement, Mes integer, Palavra Text, Tema Text, Imagem Blob)");
 
-        db.execSQL("create table Escala (_id integer primary key autoncrement, id_Boletim integer, dia_mes integer, diretor Text, pregador Text, louvor Text, secretario_EB Text, Professor_EB Text, coordenador_EB Text, Patio Text, Tipo_Escala Text, Imagem Blob )"); //tipo escala - Oficial; Local; Regional
+        db.execSQL("create table Escala (_id integer primary key autoncrement, id_Boletim integer, dia_mes integer, diretor Text, pregador Text, louvor Text, secretario_EB Text, Professor_EB Text, coordenador_EB Text,  Text, Tipo_Escala Text, Imagem Blob )"); //tipo escala - Oficial; Local; Regional
 
         db.execSQL("create table PG (_id integer primary key autoncrement, local Text, dia_semana integer, Endereco Text, bairro Text, Cidade Text, estado text, responsavel text )");
 
