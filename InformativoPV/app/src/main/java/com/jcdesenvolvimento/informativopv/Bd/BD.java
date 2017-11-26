@@ -37,7 +37,7 @@ public class BD extends SQLiteOpenHelper {
 
         db.execSQL("create table Pessoa_Membro (_id integer primary key autoncrement, Nome Text, nascimento date)");
 
-        db.execSQL("create table Telefones (_id integer primary key autoncrement, id_cliente integer, ddd integer, telefone text )");
+        db.execSQL("create table Telefones (_id integer primary key autoncrement, id_Membro integer, ddd integer, telefone text )");
 
     }
 

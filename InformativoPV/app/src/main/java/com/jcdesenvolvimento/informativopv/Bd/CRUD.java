@@ -11,6 +11,7 @@ import com.jcdesenvolvimento.informativopv.Model.Escala;
 import com.jcdesenvolvimento.informativopv.Model.Igreja;
 import com.jcdesenvolvimento.informativopv.Model.MembroDpto;
 import com.jcdesenvolvimento.informativopv.Model.Pessoa_Membro;
+import com.jcdesenvolvimento.informativopv.Model.Telefones;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -292,8 +293,9 @@ public class CRUD {
     public  void insertMembroDpto(MembroDpto objeto){
         //Classe para passar valores para o db
         ContentValues valores = new ContentValues();
-        valores.put("iId_Igreja", objeto.getId_igreja());
-        valores.put("descricao", objeto.getsDescricao());
+        valores.put("iId_Igreja", objeto.getiId_Igreja());
+        valores.put("id_membro", objeto.getiId_membro());
+        valores.put("id_dpto", objeto.getiId_dpto());
 
 
         bd.insert("MembroDpto",null,valores);
@@ -303,18 +305,18 @@ public class CRUD {
 
     public void atualizaMembroDpto(MembroDpto objeto){
         ContentValues valores = new ContentValues();
-        valores.put("id_igreja", objeto.getiId_igreja());
-        valores.put("descricao", objeto.getsDescricao());
-
+        valores.put("iId_Igreja", objeto.getiId_Igreja());
+        valores.put("id_membro", objeto.getiId_membro());
+        valores.put("id_dpto", objeto.getiId_dpto());
 
         bd.update("MembroDpto",valores,"_id="+objeto.getiId(),null);
     }
 
     public void deletarMembroDpto(MembroDpto objeto){
-        bd.delete("Dpto_Ministerio", "_id"+objeto.getiId(),null);
+        bd.delete("MembroDpto", "_id"+objeto.getiId(),null);
     }
 
-    public List<MembroDpto> buscarMembroDpto{
+    public List<MembroDpto> buscarMembroDpto(){
         List<MembroDpto> list = new ArrayList<MembroDpto>();
         String[] colunas = new String[]{"_id","Mes", "Palavra", "Imagem"}; //String de colunas da busca
 
@@ -326,11 +328,11 @@ public class CRUD {
                 MembroDpto objMembroDpto = new MembroDpto();
                 //Setar os valores no objeto e adicionar a lista (cursor.getTipo(indiceColuna));
                 objMembroDpto.setiId(cursor.getInt(0));
-                objMembroDpto.setiId_igreja(cursor.getInt(1));
-                objMembroDpto.setsDescricao(cursor.getString(2));
+                objMembroDpto.setiId_Igreja(cursor.getInt(1));
+                objMembroDpto.setiId_membro(cursor.getInt(2));
+                objMembroDpto.setiId_dpto(cursor.getInt(3));
 
-
-                list.add(objDpto_Ministerio);
+                list.add(objMembroDpto);
 
 
             }while(cursor.moveToNext());
@@ -344,11 +346,124 @@ public class CRUD {
     //Dpto_Ministerio
 
 
-      db.execSQL("create table  (_id integer primary key autoncrement, id_membro integer, id_dpto integer)");
+    //Pessoa_Membro
+    public  void insertPessoa_Membro(Pessoa_Membro objeto){
+        //Classe para passar valores para o db
+        ContentValues valores = new ContentValues();
+        valores.put("Id_Igreja", objeto.getiId_Igreja());
+        valores.put("Nome", objeto.getsNome());
+        valores.put("nascimento", String.valueOf(objeto.getdNascimento()));
 
-        db.execSQL("create table Pessoa_Membro (_id integer primary key autoncrement, Nome Text, nascimento date)");
 
-        db.execSQL("create table Telefones (_id integer primary key autoncrement, id_cliente integer, ddd integer, telefone text )");
+        bd.insert("Pessoa_Membro",null,valores);
+
+
+    }
+
+    public void atualizaPessoa_Membro(Pessoa_Membro objeto){
+        ContentValues valores = new ContentValues();
+        valores.put("Id_Igreja", objeto.getiId_Igreja());
+        valores.put("Nome", objeto.getsNome());
+        valores.put("nascimento", String.valueOf(objeto.getdNascimento()));
+
+
+        bd.update("Pessoa_Membro",valores,"_id="+objeto.getiId(),null);
+    }
+
+    public void deletarPessoa_Membro(Pessoa_Membro objeto){
+        bd.delete("Pessoa_Membro", "_id"+objeto.getiId(),null);
+    }
+
+    public List<Pessoa_Membro> buscarPessoa_Membro(){
+        List<Pessoa_Membro> list = new ArrayList<Pessoa_Membro>();
+        String[] colunas = new String[]{"_id","Mes", "Palavra", "Imagem"}; //String de colunas da busca
+
+        Cursor cursor = bd.query("Pessoa_Membro",colunas,null,null,null,null,"");
+
+        if (cursor.getCount() > 0 ){
+            cursor.moveToFirst();
+            do{
+                Pessoa_Membro objPessoa_Membro = new Pessoa_Membro();
+                //Setar os valores no objeto e adicionar a lista (cursor.getTipo(indiceColuna));
+                objPessoa_Membro.setiId(cursor.getInt(0));
+                objPessoa_Membro.setiId_Igreja(cursor.getInt(1));
+                objPessoa_Membro.setsNome(cursor.getString(2));
+                //objPessoa_Membro.setdNascimento(String.valueOf(cursor.getString(3)));
+
+                list.add(objPessoa_Membro);
+
+
+            }while(cursor.moveToNext());
+        }
+
+
+
+        return list;
+
+    }
+    //Pessoa_Membro
+
+
+
+    //Telefones
+    public  void insertTelefones(Telefones objeto){
+        //Classe para passar valores para o db
+        ContentValues valores = new ContentValues();
+        valores.put("Id_Membro", objeto.getiId_Membro());
+        valores.put("ddd", objeto.getiDdd());
+        valores.put("telefone", objeto.getsTelefone());
+
+
+        bd.insert("Telefones",null,valores);
+
+
+    }
+
+    public void atualizaTelefones(Telefones objeto){
+        ContentValues valores = new ContentValues();
+        valores.put("Id_Membro", objeto.getiId_Membro());
+        valores.put("ddd", objeto.getiDdd());
+        valores.put("telefone", objeto.getsTelefone());
+
+
+        bd.update("Telefones",valores,"_id="+objeto.getiId(),null);
+    }
+
+    public void deletarTelefones(Telefones objeto){
+        bd.delete("Telefones", "_id"+objeto.getiId(),null);
+    }
+
+    public List<Telefones> buscarTelefones(){
+        List<Telefones> list = new ArrayList<Telefones>();
+        String[] colunas = new String[]{"_id","Mes", "Palavra", "Imagem"}; //String de colunas da busca
+
+        Cursor cursor = bd.query("Telefones",colunas,null,null,null,null,"");
+
+        if (cursor.getCount() > 0 ){
+            cursor.moveToFirst();
+            do{
+                Telefones objTelefones = new Telefones();
+                //Setar os valores no objeto e adicionar a lista (cursor.getTipo(indiceColuna));
+                objTelefones.setiId(cursor.getInt(0));
+                objTelefones.setiId_Membro(cursor.getInt(1));
+                objTelefones.setiDdd(cursor.getInt(2));
+                objTelefones.setsTelefone(cursor.getString(3));
+                //objPessoa_Membro.setdNascimento(String.valueOf(cursor.getString(3)));
+
+                list.add(objTelefones);
+
+
+            }while(cursor.moveToNext());
+        }
+
+
+
+        return list;
+
+    }
+    //Telefones
+
+
 
 
 
