@@ -25,4 +25,7 @@
         android:layout_below="@+id/txtTituloBoletim"
         app:srcCompat="@color/colorPrimaryDark" />
 
+
+
+
 </RelativeLayout>

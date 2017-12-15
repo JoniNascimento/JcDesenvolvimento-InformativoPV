@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Culto"
+        android:textAlignment="center"
+        android:layout_alignBaseline="@+id/textView26"
+        android:layout_alignBottom="@+id/textView26"
+        android:layout_toLeftOf="@+id/img_sobre"
+        android:layout_alignLeft="@+id/img_escala"
+        android:layout_alignStart="@+id/img_escala" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginTop="13dp"
+        android:text="Escola Bíblica"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignEnd="@+id/img_sobre"
+        android:layout_alignLeft="@+id/img_sobre"
+        android:layout_alignRight="@+id/img_sobre"
+        android:layout_alignStart="@+id/img_sobre"
+        android:text="Sobre"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignEnd="@+id/textView22"
+        android:layout_alignRight="@+id/textView22"
+        android:layout_toRightOf="@+id/img_aniversariantes"
+        android:text="Mapa"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/img_aniversariantes"
+        android:layout_alignLeft="@+id/img_aniversariantes"
+        android:layout_alignRight="@+id/img_aniversariantes"
+        android:layout_alignStart="@+id/img_aniversariantes"
+        android:layout_below="@+id/img_aniversariantes"
+        android:layout_marginTop="11dp"
+        android:text="Aniversariantes"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INFORMATIVO"
+        android:background="@drawable/bkg_txt_informativo"
+        android:padding="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/escola"
+        android:layout_alignTop="@+id/img_escala"
+        android:layout_alignLeft="@+id/img_sobre"
+        android:layout_alignStart="@+id/img_sobre" />
+
+    <ImageView
+        android:id="@+id/img_escala"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/escala"
+        android:layout_alignTop="@+id/img_palavra"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/img_pg"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/pg"
+        android:layout_alignTop="@+id/img_agenda"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/img_agenda"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/img_escala"
+        android:layout_alignStart="@+id/img_escala"
+        android:layout_alignTop="@+id/img_patio"
+        app:srcCompat="@drawable/agenda" />
+
+    <ImageView
+        android:id="@+id/img_patio"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="62dp"
+        app:srcCompat="@drawable/patio"
+        android:layout_below="@+id/img_palavra"
+        android:layout_alignLeft="@+id/img_palavra"
+        android:layout_alignStart="@+id/img_palavra"/>
+
+    <ImageView
+        android:id="@+id/img_palavra"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/palavra"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/img_aniversariantes"
+        android:layout_alignStart="@+id/img_aniversariantes" />
+
+    <ImageView
+        android:id="@+id/img_sobre"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        app:srcCompat="@drawable/sobre"
+        android:layout_alignTop="@+id/img_aniversariantes"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/img_mapa"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/img_aniversariantes"
+        android:layout_toEndOf="@+id/img_aniversariantes"
+        android:layout_toRightOf="@+id/img_aniversariantes"
+        app:srcCompat="@drawable/mapa" />
+
+    <ImageView
+        android:id="@+id/img_aniversariantes"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="49dp"
+        app:srcCompat="@drawable/aniversariantes"
+        android:layout_below="@+id/img_patio"
+        android:layout_toLeftOf="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView25"
+        android:layout_alignBottom="@+id/textView25"
+        android:layout_alignEnd="@+id/img_pg"
+        android:layout_alignLeft="@+id/img_pg"
+        android:layout_alignRight="@+id/img_pg"
+        android:layout_alignStart="@+id/img_pg"
+        android:text="Peq. Grupos "
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView24"
+        android:layout_alignBottom="@+id/textView24"
+        android:layout_alignEnd="@+id/img_agenda"
+        android:layout_alignRight="@+id/img_agenda"
+        android:layout_toRightOf="@+id/img_aniversariantes"
+        android:text="Agenda"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/img_patio"
+        android:layout_alignLeft="@+id/img_patio"
+        android:layout_alignRight="@+id/img_patio"
+        android:layout_alignStart="@+id/img_patio"
+        android:layout_below="@+id/img_patio"
+        android:layout_marginTop="15dp"
+        android:text="Pátio"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView22"
+        android:layout_alignBottom="@+id/textView22"
+        android:layout_alignEnd="@+id/img_palavra"
+        android:layout_alignLeft="@+id/img_palavra"
+        android:layout_alignRight="@+id/img_palavra"
+        android:layout_alignStart="@+id/img_palavra"
+        android:text="Palavra"
+        android:textAlignment="center" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView7"
+        android:layout_alignRight="@+id/textView7"
+        android:layout_below="@+id/textView7"
+        android:layout_gravity="bottom|end"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+
+</RelativeLayout>

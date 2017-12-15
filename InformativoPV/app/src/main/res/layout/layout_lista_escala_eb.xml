@@ -9,23 +9,12 @@
     android:orientation="vertical"
     android:weightSum="1"
     tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="81dp">
+    tools:layout_editor_absoluteY="81dp"
+    android:padding="10dp">
+
 
     <TextView
-        android:id="@+id/tv_oferta_culto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/tv_louvor_culto" />
-
-    <TextView
-        android:id="@+id/tv_louvor_culto"
+        android:id="@+id/tv_oferta_eb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -33,14 +22,14 @@
         android:layout_marginTop="4dp"
         android:text="TextView"
         app:layout_constraintLeft_toRightOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/tv_mensagem_culto" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_secretaria_eb" />
 
     <TextView
-        android:id="@+id/txv_data_escala_oficial"
+        android:id="@+id/txv_data_escala_eb"
         android:layout_width="54dp"
         android:layout_height="61dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/bkg_data_linha"
         android:gravity="center_vertical|center_horizontal"
         android:text="10 Dez"
@@ -56,9 +45,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:text="Mensagem"
+        android:text="Secretaía"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/txv_data_escala_oficial"
+        app:layout_constraintLeft_toRightOf="@+id/txv_data_escala_eb"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
@@ -68,25 +57,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:text="Louvor"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/txv_data_escala_oficial"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
         android:text="Oferta"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/txv_data_escala_oficial"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintLeft_toRightOf="@+id/txv_data_escala_eb"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
 
     <TextView
         android:id="@+id/textView9"
@@ -97,11 +72,11 @@
         android:layout_marginTop="4dp"
         android:text="Direção"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/txv_data_escala_oficial"
+        app:layout_constraintLeft_toRightOf="@+id/txv_data_escala_eb"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_mensagem_culto"
+        android:id="@+id/tv_secretaria_eb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -109,10 +84,10 @@
         android:layout_marginTop="4dp"
         android:text="TextView"
         app:layout_constraintLeft_toRightOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/tv_direcao_culto" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_direcao_eb" />
 
     <TextView
-        android:id="@+id/tv_direcao_culto"
+        android:id="@+id/tv_direcao_eb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
