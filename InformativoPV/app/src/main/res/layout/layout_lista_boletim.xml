@@ -8,7 +8,7 @@
     android:id="@+id/layout_lista_boletim">
 
     <TextView
-        android:id="@+id/txtTituloBoletim"
+        android:id="@+id/tv_titulo_informativo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -22,7 +22,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtTituloBoletim"
+        android:layout_below="@+id/tv_titulo_informativo"
         app:srcCompat="@color/colorPrimaryDark" />
 
 

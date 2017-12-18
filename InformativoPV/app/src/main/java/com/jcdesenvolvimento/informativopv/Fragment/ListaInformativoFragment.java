@@ -4,11 +4,20 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jcdesenvolvimento.informativopv.Adapter.InformativoAdapter;
+import com.jcdesenvolvimento.informativopv.Bd.BD;
+import com.jcdesenvolvimento.informativopv.Bd.CRUD;
+import com.jcdesenvolvimento.informativopv.Model.Boletim;
 import com.jcdesenvolvimento.informativopv.R;
+
+import java.util.List;
+import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +38,11 @@ public class ListaInformativoFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    private InformativoAdapter informativoAdapterdapter;
+    private List<Boletim> listainformativos;
+    private CRUD crud;
+    private RecyclerView rvInformativos;
 
     public ListaInformativoFragment() {
         // Required empty public constructor
@@ -64,8 +78,28 @@ public class ListaInformativoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_lista_informativo, container, false);
+
+        crud = new CRUD(getContext());
+        listainformativos = crud.buscarBoletim();
+
+        rvInformativos = (RecyclerView) v.findViewById(R.id.rv_lista_informativos);
+        rvInformativos.setHasFixedSize(true);
+
+        GridLayoutManager GLM = new GridLayoutManager(getContext(),2);
+        GLM.setOrientation(GridLayoutManager.HORIZONTAL);
+
+        informativoAdapterdapter = new InformativoAdapter(getContext(),listainformativos);
+        rvInformativos.setAdapter(informativoAdapterdapter);
+        rvInformativos.setLayoutManager(GLM);
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_informativo, container, false);
+        return v;
+
+
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
