@@ -3,6 +3,9 @@ package com.jcdesenvolvimento.informativopv.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.jcdesenvolvimento.informativopv.Fragment.ListaInformativoFragment;
 import com.jcdesenvolvimento.informativopv.R;
 
 public class MainActivity extends AppCompatActivity
@@ -25,14 +29,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,8 +36,26 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nvView);
         navigationView.setNavigationItemSelectedListener(this);
+
+        FragmentManager fm = getSupportFragmentManager();
+
+        // Abre uma transação e adiciona
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.rl_container_fragment, new ListaInformativoFragment());
+        ft.commit();
+
+        // Substitui um Fragment
+       /* FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fragment_content, new MainFragment());
+        ft.commit();
+
+        // Remove um Fragment
+        Fragment fragment = fm.findFragmentById(R.id.fragment_content);
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.remove(fragment);
+        ft.commit();*/
     }
 
     @Override

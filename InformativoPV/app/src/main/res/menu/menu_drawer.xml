@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="">
+        <menu>
+            <item
+                android:icon="@drawable/logout"
+                android:id="@+id/nav_item_logout"
+                android:title="@string/tlogOut"
+                android:checked="true"/>
+
+        </menu>
+    </item>
+
+    <item android:title="@string/tInfo">
+        <menu>
+            <item
+                android:icon="@drawable/about"
+                android:id="@+id/nav_item_sobre"
+                android:title="@string/tSobre"
+                android:checked="true"/>
+
+        </menu>
+    </item>
+
+
+
+</menu>

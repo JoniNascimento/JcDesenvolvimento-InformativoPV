@@ -5,4 +5,18 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+
+
+    <dimen name="textoComum">18sp</dimen>
+    <dimen name="textoMenor">15sp</dimen>
+
+    <dimen name="largura_logo">150dp</dimen>
+    <dimen name="altura_logo">130dp</dimen>
+
+    <dimen name="tamano_perfil">100dp</dimen>
+
+    <dimen name="tamanho_gift">70dp</dimen>
+    <dimen name="tamanho_gift_add">200dp</dimen>
+    <dimen name="margin_padrao">20dp</dimen>
 </resources>

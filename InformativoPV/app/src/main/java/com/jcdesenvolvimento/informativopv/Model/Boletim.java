@@ -1,15 +1,18 @@
 package com.jcdesenvolvimento.informativopv.Model;
 
+import java.io.Serializable;
 import java.sql.Blob;
 
 /**
  * Created by joni on 20/11/2017.
  */
 
-public class Boletim {
+public class Boletim  implements Serializable{
 
     private int iId;
+    private String Titulo;
     private int iMes;
+    private int iAno;
     private String sPalavra;
     private String sTema;
     private byte[] iImagem;
@@ -34,8 +37,24 @@ public class Boletim {
         this.iId = iId;
     }
 
+    public String getTitulo() {
+        return Titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        Titulo = titulo;
+    }
+
     public int getiMes() {
         return iMes;
+    }
+
+    public int getiAno() {
+        return iAno;
+    }
+
+    public void setiAno(int iAno) {
+        this.iAno = iAno;
     }
 
     public void setiMes(int iMes) {

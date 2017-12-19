@@ -6,6 +6,381 @@
 
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="info_dev">Desenvolvido por: </string>
+    <string name="tUsuario">Usuário</string>
+    <string name="tSenha">Senha</string>
+    <string name="tLogin">Entrar</string>
+    <string name="tCadastrar">Não tem conta? Cadastrar-se.</string>
+    <string name="tCadastro">Cadastrar</string>
+    <string name="tLoginFB">Entrar com FaceBook</string>
+    <string name="tlogOut">Sair</string>
+    <string name="tAddGift">Adicionar presente</string>
+    <string name="pronto">Pronto!</string>
+    <string name="tAddContato">Adcionar contato</string>
+    <string name="tVoltar">Voltar</string>
+    <string name="tContatos">Contatos</string>
+    <string name="drawer_open">Abrir navigation drawer</string>
+    <string name="drawer_close">Fechar navigation drawer</string>
+    <string name="tEditarPerfil">Ver/Editar Perfil</string>
+    <string name="tExcluir">Excluir!</string>
+    <string name="tSobre">Sobre</string>
+    <string name="tInfo">Informações</string>
+    <string name="tSalvar">Salvar</string>
+    <string name="txSobre">Aplicativo desenvolvido por JC Desenvolvimento.</string>
+
+
+    //Hints
+    <string name="hint_nome">Digite seu nome de usuário</string>
+    <string name="hint_email">Digite seu e-mail</string>
+    <string name="hint_senha">Digite sua senha</string>
+    <string name="hint_desc_gift">Descrição do presente</string>
+    <string name="hint_url_gift">Link do presente (Opcional)</string>
+    <string name="busca_hint">Buscar</string>
+    <string name="hintNomeUsuario">Nome</string>
+    <string name="hintDataNascimento">Nascimento</string>
+    <string name="hintSexo">Sexo</string>
+    <string name="hintEmail">E-mail</string>
+    <string name="hintEndereco">Encereço</string>
+    <string name="hintCidade">Cidade</string>
+    <string name="hintEstado">UF</string>
+    <string name="hintPais">Pais</string>
+
+
+    //Msg
+    <string name="falha_criar_usuario">Falha ao criar usuário!!</string>
+    <string name="sucesso_criar_usuario">Usuário criado com sucesso!!</string>
+    <string name="falha_logar_usuario">Falha ao logar usuário!!</string>
+    <string name="sucesso_logar_usuario">Login efetuado com sucesso!!</string>
+    <string name="manutencao">Essa parte esta em manutenção!!</string>
+    <string name="construcao">Essa parte do app está em Construção!!</string>
+    <string name="falha_gravar_presente">Ocorreu um erro ao gravar o presente!</string>
+    <string name="sucesso_gravar_presente">O presente foi gravado com sucesso!</string>
+    <string name="falha_excluir_presente">Ocorreu um erro ao excluir o presente!</string>
+    <string name="sucesso_excluir_presente">O presente foi excluido com sucesso!</string>
+    <string name="falha_gravar_contato">Ocorreu um erro ao adicionar o contato!</string>
+    <string name="sucesso_gravar_contato">O contato foi adicionado com sucesso!</string>
+    <string name="falha_gravar_perfil">Ocorreu um erro ao salvar o perfil!</string>
+    <string name="sucesso_gravar_perfil">O seu perfil foi salvo com sucesso!</string>
+    <string name="falha_logar_fb">Ocorreu um erro ao Logar usando o FaceBook!</string>
+
+
+    //Chaves
+    <string name="parseAppID">Fkhh6wRW7YaqDVQ1pplNtTU5sdNbCYgXT76h0Xs6</string>
+    <string name="parseClienteKey">dJ7qkLlVeWsspdngetZqGOVBntDJj8DwQyaolJWm</string>
+    <string name="parseApiServer">https://parseapi.back4app.com/</string>
+    <string name="facebook_app_id">821898674616708</string>
+
+    <array name="sexo">
+        <item>Feminino</item>
+        <item>Masculino</item>
+    </array>
+
+    <array name="estados">
+        <item>UF</item>
+        <item>AC</item>
+        <item>AL</item>
+        <item>AP</item>
+        <item>AM</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MT</item>
+        <item>MS</item>
+        <item>MG</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PR</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RS</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>SC</item>
+        <item>SP</item>
+        <item>SE</item>
+        <item>TO</item>
+    </array>
+
+    <array name="paises">
+
+        <item>Afeganistão</item>
+        <item>África do Sul</item>
+        <item>Akrotiri</item>
+        <item>Albânia</item>
+        <item>Alemanha</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Anguila</item>
+        <item>Antárctida</item>
+        <item>Antígua e Barbuda</item>
+        <item>Antilhas Neerlandesas</item>
+        <item>Arábia Saudita</item>
+        <item>Arctic Ocean</item>
+        <item>Argélia</item>
+        <item>Argentina</item>
+        <item>Arménia</item>
+        <item>Aruba</item>
+        <item>Ashmore and Cartier Islands</item>
+        <item>Atlantic Ocean</item>
+        <item>Austrália</item>
+        <item>Áustria</item>
+        <item>Azerbaijão</item>
+        <item>Baamas</item>
+        <item>Bangladeche</item>
+        <item>Barbados</item>
+        <item>Barém</item>
+        <item>Bélgica</item>
+        <item>Belize</item>
+        <item>Benim</item>
+        <item>Bermudas</item>
+        <item>Bielorrússia</item>
+        <item>Birmânia</item>
+        <item>Bolívia</item>
+        <item>Bósnia e Herzegovina</item>
+        <item>Botsuana</item>
+        <item>Brasil</item>
+        <item>Brunei</item>
+        <item>Bulgária</item>
+        <item>Burquina Faso</item>
+        <item>Burúndi</item>
+        <item>Butão</item>
+        <item>Cabo Verde</item>
+        <item>Camarões</item>
+        <item>Camboja</item>
+        <item>Canadá</item>
+        <item>Catar</item>
+        <item>Cazaquistão</item>
+        <item>Chade</item>
+        <item>Chile</item>
+        <item>China</item>
+        <item>Chipre</item>
+        <item>Clipperton Island</item>
+        <item>Colômbia</item>
+        <item>Comores</item>
+        <item>Congo-Brazzaville</item>
+        <item>Congo-Kinshasa</item>
+        <item>Coral Sea Islands</item>
+        <item>Coreia do Norte</item>
+        <item>Coreia do Sul</item>
+        <item>Costa do Marfim</item>
+        <item>Costa Rica</item>
+        <item>Croácia</item>
+        <item>Cuba</item>
+        <item>Dhekelia</item>
+        <item>Dinamarca</item>
+        <item>Domínica</item>
+        <item>Egipto</item>
+        <item>Emiratos Árabes Unidos</item>
+        <item>Equador</item>
+        <item>Eritreia</item>
+        <item>Eslováquia</item>
+        <item>Eslovénia</item>
+        <item>Espanha</item>
+        <item>Estados Unidos</item>
+        <item>Estónia</item>
+        <item>Etiópia</item>
+        <item>Faroé</item>
+        <item>Fiji</item>
+        <item>Filipinas</item>
+        <item>Finlândia</item>
+        <item>França</item>
+        <item>Gabão</item>
+        <item>Gâmbia</item>
+        <item>Gana</item>
+        <item>Gaza Strip</item>
+        <item>Geórgia</item>
+        <item>Geórgia do Sul e Sandwich do Sul</item>
+        <item>Gibraltar</item>
+        <item>Granada</item>
+        <item>Grécia</item>
+        <item>Gronelândia</item>
+        <item>Guame</item>
+        <item>Guatemala</item>
+        <item>Guernsey</item>
+        <item>Guiana</item>
+        <item>Guiné</item>
+        <item>Guiné Equato</item>rial
+        <item>Guiné-Bissau</item>
+        <item>Haiti</item>
+        <item>Honduras</item>
+        <item>Hong Kong</item>
+        <item>Hungria</item>
+        <item>Iémen</item>
+        <item>Ilha Bouvet</item>
+        <item>Ilha do Natal</item>
+        <item>Ilha Norfolk</item>
+        <item>Ilhas Caimão</item>
+        <item>Ilhas Cook</item>
+        <item>Ilhas dos Cocos</item>
+        <item>Ilhas Falkland</item>
+        <item>Ilhas Heard e McDonald</item>
+        <item>Ilhas Marshall</item>
+        <item>Ilhas Salomão</item>
+        <item>Ilhas Turcas e Caicos</item>
+        <item>Ilhas Virgens Americanas</item>
+        <item>Ilhas Virgens Britânicas</item>
+        <item>Índia</item>
+        <item>Indian Ocean</item>
+        <item>Indonésia</item>
+        <item>Irão</item>
+        <item>Iraque</item>
+        <item>Irlanda</item>
+        <item>Islândia</item>
+        <item>Israel</item>
+        <item>Itália</item>
+        <item>Jamaica</item>
+        <item>Jan Mayen</item>
+        <item>Japão</item>
+        <item>Jersey</item>
+        <item>Jibuti</item>
+        <item>Jordânia</item>
+        <item>Kuwait</item>
+        <item>Laos</item>
+        <item>Lesoto</item>
+        <item>Letónia</item>
+        <item>Líbano</item>
+        <item>Libéria</item>
+        <item>Líbia</item>
+        <item>Listenstaine</item>
+        <item>Lituânia</item>
+        <item>Luxemburgo</item>
+        <item>Macau</item>
+        <item>Macedónia</item>
+        <item>Madagáscar</item>
+        <item>Malásia</item>
+        <item>Malávi</item>
+        <item>Maldivas</item>
+        <item>Mali</item>
+        <item>Malta</item>
+        <item>Man, Isle of</item>
+        <item>Marianas do Norte</item>
+        <item>Marrocos</item>
+        <item>Maurícia</item>
+        <item>Mauritânia</item>
+        <item>Mayotte</item>
+        <item>México</item>
+        <item>Micronésia</item>
+        <item>Moçambique</item>
+        <item>Moldávia</item>
+        <item>Mónaco</item>
+        <item>Mongólia</item>
+        <item>Monserrate</item>
+        <item>Montenegro</item>
+        <item>Mundo</item>
+        <item>Namíbia</item>
+        <item>Nauru</item>
+        <item>Navassa Island</item>
+        <item>Nepal</item>
+        <item>Nicarágua</item>
+        <item>Níger</item>
+        <item>Nigéria</item>
+        <item>Niue</item>
+        <item>Noruega</item>
+        <item>Nova Caledónia</item>
+        <item>Nova Zelândia</item>
+        <item>Omã</item>
+        <item>Pacific Ocean</item>
+        <item>Países Baixos</item>
+        <item>Palau</item>
+        <item>Panamá</item>
+        <item>Papua-Nova Guiné</item>
+        <item>Paquistão</item>
+        <item>Paracel Islands</item>
+        <item>Paraguai</item>
+        <item>Peru</item>
+        <item>Pitcairn</item>
+        <item>Polinésia Francesa</item>
+        <item>Polónia</item>
+        <item>Porto Rico</item>
+        <item>Portugal</item>
+        <item>Quénia</item>
+        <item>Quirguizistão</item>
+        <item>Quiribáti</item>
+        <item>Reino Unido</item>
+        <item>República Centro-Africana</item>
+        <item>República Checa</item>
+        <item>República Dominicana</item>
+        <item>Roménia</item>
+        <item>Ruanda</item>
+        <item>Rússia</item>
+        <item>Salvador</item>
+        <item>Samoa</item>
+        <item>Samoa Americana</item>
+        <item>Santa Helena</item>
+        <item>Santa Lúcia</item>
+        <item>São Cristóvão e Neves</item>
+        <item>São Marinho</item>
+        <item>São Pedro e Miquelon</item>
+        <item>São Tomé e Príncipe</item>
+        <item>São Vicente e Granadinas</item>
+        <item>Sara Ocidental</item>
+        <item>Seicheles</item>
+        <item>Senegal</item>
+        <item>Serra Leoa</item>
+        <item>Sérvia</item>
+        <item>Singapura</item>
+        <item>Síria</item>
+        <item>Somália</item>
+        <item>Southern Ocean</item>
+        <item>Spratly Islands</item>
+        <item>Sri Lanca</item>
+        <item>Suazilândia</item>
+        <item>Sudão</item>
+        <item>Suécia</item>
+        <item>Suíça</item>
+        <item>Suriname</item>
+        <item>Svalbard e Jan Mayen</item>
+        <item>Tailândia</item>
+        <item>Taiwan</item>
+        <item>Tajiquistão</item>
+        <item>Tanzânia</item>
+        <item>Território Britânico do Oceano Índico</item>
+        <item>Territórios Austrais Franceses</item>
+        <item>Timor Leste</item>
+        <item>Togo</item>
+        <item>Tokelau</item>
+        <item>Tonga</item>
+        <item>Trindade e Tobago</item>
+        <item>Tunísia</item>
+        <item>Turquemenistão</item>
+        <item>Turquia</item>
+        <item>Tuvalu</item>
+        <item>Ucrânia</item>
+        <item>Uganda</item>
+        <item>União Europeia</item>
+        <item>Uruguai</item>
+        <item>Usbequistão</item>
+        <item>Vanuatu</item>
+        <item>Vaticano</item>
+        <item>Venezuela</item>
+        <item>Vietname</item>
+        <item>Wake Island</item>
+        <item>Wallis e Futuna</item>
+        <item>West Bank</item>
+        <item>Zâmbia</item>
+        <item>Zimbabué</item>
+    </array>
+
+    <array name="meses">
+        <item>Janeiro</item>
+        <item>Fevereiro</item>
+        <item>Março</item>
+        <item>Abril</item>
+        <item>Maio</item>
+        <item>Junho</item>
+        <item>Julho</item>
+        <item>Agosto</item>
+        <item>Setembro</item>
+        <item>Outubro</item>
+        <item>Novembro</item>
+        <item>Dezembro</item>
+    </array>
+
 </resources>
