@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.jcdesenvolvimento.informativopv.Model.Boletim;
 import com.jcdesenvolvimento.informativopv.R;
+import com.jcdesenvolvimento.informativopv.Util.Functions;
 
 
 import java.util.List;
@@ -39,9 +40,10 @@ public class InformativoAdapter extends RecyclerView.Adapter<InformativoAdapter.
 
     @Override
     public void onBindViewHolder(InformativoViewHolder holder, int position) {
+        Functions functions = new Functions();
 
-        //holder.imgInformativo.setImageResource(mInformativos.get(position).getiImagem());
-        holder.tvTittulo.setText(mInformativos.get(position).getiMes());
+        holder.imgInformativo.setImageBitmap(functions.byteToBitmap(mInformativos.get(position).getiImagem()));
+        holder.tvTittulo.setText(mInformativos.get(position).getTitulo().toString());
 
     }
 

@@ -1,8 +1,13 @@
 package com.jcdesenvolvimento.informativopv.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.SyncStateContract;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,11 +17,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.jcdesenvolvimento.informativopv.Bd.CRUD;
 import com.jcdesenvolvimento.informativopv.Model.Boletim;
 import com.jcdesenvolvimento.informativopv.R;
 import com.jcdesenvolvimento.informativopv.Util.Constants;
+import com.jcdesenvolvimento.informativopv.Util.Functions;
 
 import java.util.Calendar;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,6 +57,9 @@ public class InformativoFragment extends Fragment implements View.OnClickListene
     private int iYear;
     private String sMonth;
     private Constants constants;
+    private Functions functions;
+
+    public static final int STORAGE_IMAGE = 1;
 
     public InformativoFragment()  {
         // Required empty public constructor
@@ -85,6 +97,9 @@ public class InformativoFragment extends Fragment implements View.OnClickListene
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_informativo, container, false);
+
+        functions = new Functions();
+
         edtTituloInformativo = (EditText) v.findViewById(R.id.edt_titulo_informativo_editar);
         imgInformativo = (ImageView) v.findViewById(R.id.img_titulo_informativo);
         imgInformativo.setOnClickListener(this);
@@ -118,11 +133,34 @@ public class InformativoFragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_salvar_informativo:
+                CRUD crud = new CRUD(getActivity());
+                crud.insertBoletim(objInformativo);
                 break;
             case R.id.img_titulo_informativo:
+                getImgStorage();
                 break;
         }
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == STORAGE_IMAGE && resultCode == RESULT_OK && null != data) {
+            Uri selectedImage = data.getData();
+            String[] filePathColumn = { MediaStore.Images.Media.DATA };
+            Cursor cursor = getActivity().getContentResolver().query(selectedImage,filePathColumn, null, null, null);
+            cursor.moveToFirst();
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            String picturePath = cursor.getString(columnIndex);
+            cursor.close();
+            Bitmap bmp =  BitmapFactory.decodeFile(picturePath);
+
+            byte[] imgbyte = functions.bitmapToByte(bmp);
+            objInformativo.setiImagem(imgbyte);
+            setValuesViews();
+        }
     }
 
     public void loadExtra(){
@@ -148,7 +186,21 @@ public class InformativoFragment extends Fragment implements View.OnClickListene
 
     public void setValuesViews(){
         edtTituloInformativo.setText(objInformativo.getTitulo().toString());
+        if (objInformativo.getiImagem() != null){
+            imgInformativo.setBackgroundResource(0);
+            imgInformativo.setImageBitmap(functions.byteToBitmap(objInformativo.getiImagem()));
+        }
 
+
+    }
+
+
+
+    public void getImgStorage(){
+       // Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/*");
+        getActivity().startActivityForResult(intent,STORAGE_IMAGE);
     }
     /**
      * This interface must be implemented by activities that contain this

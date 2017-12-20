@@ -10,6 +10,7 @@ import java.sql.Blob;
 public class Boletim  implements Serializable{
 
     private int iId;
+    private int iIdIgreja;
     private String Titulo;
     private int iMes;
     private int iAno;
@@ -18,16 +19,15 @@ public class Boletim  implements Serializable{
     private byte[] iImagem;
 
     public Boletim() {
-    }
 
-    public Boletim(int iId, int iMes, String sPalavra, String sTema, byte[] iImagem) {
-        this.iId = iId;
-        this.iMes = iMes;
-        this.sPalavra = sPalavra;
-        this.sTema = sTema;
-        this.iImagem = iImagem;
+        this.iIdIgreja = 0;
+        Titulo = "";
+        this.iMes = 0;
+        this.iAno = 0;
+        this.sPalavra = "";
+        this.sTema = "";
+        this.iImagem = null;
     }
-
 
     public int getiId() {
         return iId;
@@ -35,6 +35,14 @@ public class Boletim  implements Serializable{
 
     public void setiId(int iId) {
         this.iId = iId;
+    }
+
+    public int getiIdIgreja() {
+        return iIdIgreja;
+    }
+
+    public void setiIdIgreja(int iIdIgreja) {
+        this.iIdIgreja = iIdIgreja;
     }
 
     public String getTitulo() {

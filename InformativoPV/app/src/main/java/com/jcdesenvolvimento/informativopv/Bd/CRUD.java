@@ -103,8 +103,12 @@ public class CRUD {
     public  void insertBoletim (Boletim objeto){
         //Classe para passar valores para o db
         ContentValues valores = new ContentValues();
+        valores.put("IdIgreja",objeto.getiIdIgreja());
+        valores.put("Titulo", objeto.getTitulo().toString());
         valores.put("Mes", objeto.getiMes());
+        valores.put("Ano", objeto.getiAno());
         valores.put("Palavra", objeto.getsPalavra().toString());
+        valores.put("Tema",objeto.getsTema().toString());
         valores.put("Imagem", objeto.getiImagem());
 
         bd.insert("Boletim",null,valores);
@@ -113,11 +117,17 @@ public class CRUD {
 
     public void atualizaBoletim(Boletim objeto){
         ContentValues valores = new ContentValues();
+        valores.put("IdIgreja",objeto.getiIdIgreja());
+        valores.put("Titulo", objeto.getTitulo().toString());
         valores.put("Mes", objeto.getiMes());
+        valores.put("Ano", objeto.getiAno());
         valores.put("Palavra", objeto.getsPalavra().toString());
+        valores.put("Tema",objeto.getsTema().toString());
         valores.put("Imagem", objeto.getiImagem());
 
         bd.update("Boletim",valores,"_id="+objeto.getiId(),null);
+
+
     }
 
     public void deletarBoletim(Boletim objeto){
@@ -126,7 +136,7 @@ public class CRUD {
 
     public List<Boletim> buscarBoletim(){
         List<Boletim> list = new ArrayList<Boletim>();
-        String[] colunas = new String[]{"_id","Mes", "Palavra", "Imagem"}; //String de colunas da busca
+        String[] colunas = new String[]{"_id","IdIgreja", "Titulo","Mes", "Ano", "Palavra","Tema", "Imagem"}; //String de colunas da busca
 
         Cursor cursor = bd.query("Boletim",colunas,null,null,null,null,"");
 
@@ -136,9 +146,13 @@ public class CRUD {
                 Boletim objBoletim = new Boletim();
                 //Setar os valores no objeto e adicionar a lista (cursor.getTipo(indiceColuna));
                 objBoletim.setiId(cursor.getInt(0));
-                objBoletim.setiMes(cursor.getInt(1));
-                objBoletim.setsPalavra(cursor.getString(2));
-                objBoletim.setiImagem(cursor.getBlob(3));
+                objBoletim.setiIdIgreja(cursor.getInt(1));
+                objBoletim.setTitulo(cursor.getString(2));
+                objBoletim.setiMes(cursor.getInt(3));
+                objBoletim.setiAno(cursor.getInt(4));
+                objBoletim.setsPalavra(cursor.getString(5));
+                objBoletim.setsTema(cursor.getString(6));
+                objBoletim.setiImagem(cursor.getBlob(7));
 
                 list.add(objBoletim);
 
