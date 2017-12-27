@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/InformativoPV.iml" filepath="$PROJECT_DIR$/InformativoPV.iml" />
+      <module fileurl="file://D:\JoniDEv\JcDesenvolvimento-InformativoPV\InformativoPV\InformativoPV.iml" filepath="D:\JoniDEv\JcDesenvolvimento-InformativoPV\InformativoPV\InformativoPV.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\JoniDEv\JcDesenvolvimento-InformativoPV\InformativoPV\app\app.iml" filepath="D:\JoniDEv\JcDesenvolvimento-InformativoPV\InformativoPV\app\app.iml" />
     </modules>
   </component>
 </project>

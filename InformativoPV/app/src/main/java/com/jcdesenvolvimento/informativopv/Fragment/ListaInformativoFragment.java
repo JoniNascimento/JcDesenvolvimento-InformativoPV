@@ -103,9 +103,6 @@ public class ListaInformativoFragment extends Fragment implements View.OnClickLi
         // Inflate the layout for this fragment
         return v;
 
-
-
-
     }
 
 

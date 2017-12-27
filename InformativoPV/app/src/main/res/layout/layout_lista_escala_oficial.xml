@@ -13,11 +13,10 @@
 
     <TextView
         android:id="@+id/tv_oferta_culto"
-        android:layout_width="wrap_content"
+        android:layout_width="202dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,10 +25,9 @@
 
     <TextView
         android:id="@+id/tv_louvor_culto"
-        android:layout_width="wrap_content"
+        android:layout_width="198dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:text="TextView"
         app:layout_constraintLeft_toRightOf="@+id/textView12"
@@ -102,10 +100,9 @@
 
     <TextView
         android:id="@+id/tv_mensagem_culto"
-        android:layout_width="wrap_content"
+        android:layout_width="171dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:text="TextView"
         app:layout_constraintLeft_toRightOf="@+id/textView11"
@@ -113,10 +110,9 @@
 
     <TextView
         android:id="@+id/tv_direcao_culto"
-        android:layout_width="wrap_content"
+        android:layout_width="193dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:text="TextView"
         app:layout_constraintLeft_toRightOf="@+id/textView9"
