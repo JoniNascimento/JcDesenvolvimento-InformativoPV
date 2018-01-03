@@ -19,7 +19,7 @@ import java.util.List;
  * Created by joni on 17/12/2017.
  */
 
-public class EscalaAdapter extends RecyclerView.Adapter<EscalaAdapter.EscalaViewHolder> {
+public class EscalaAdapter extends RecyclerView.Adapter<EscalaAdapter.EscalaViewHolder>  implements View.OnClickListener{
 
     private List<Escala> mEscalas;
     private LayoutInflater mLayoutInflate;
@@ -46,11 +46,23 @@ public class EscalaAdapter extends RecyclerView.Adapter<EscalaAdapter.EscalaView
         holder.tvLouvorCulto.setText(mEscalas.get(position).getsLouvor().toString());
         holder.tvOfertaCulto.setText(mEscalas.get(position).getsOferta().toString());
 
+        //manipular o click dos Text Views
+        holder.tvDirecaoCulto.setOnClickListener(this);
+        holder.tvMensagemCulto.setOnClickListener(this);
+        holder.tvLouvorCulto.setOnClickListener(this);
+        holder.tvOfertaCulto.setOnClickListener(this);
     }
 
     @Override
     public int getItemCount() {
         return mEscalas.size();
+    }
+
+    @Override
+    public void onClick(View v) {
+        //abrir o Alert dialog com os nomes dos membros que vem do banco para inserir no objeto da escala
+
+
     }
 
 
@@ -68,6 +80,8 @@ public class EscalaAdapter extends RecyclerView.Adapter<EscalaAdapter.EscalaView
             tvMensagemCulto = (TextView) itemView.findViewById(R.id.tv_mensagem_culto);
             tvLouvorCulto = (TextView) itemView.findViewById(R.id.tv_louvor_culto);
             tvOfertaCulto = (TextView) itemView.findViewById(R.id.tv_oferta_culto);
+
+
 
         }
 

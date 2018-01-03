@@ -64,6 +64,7 @@
     <string name="falha_gravar_perfil">Ocorreu um erro ao salvar o perfil!</string>
     <string name="sucesso_gravar_perfil">O seu perfil foi salvo com sucesso!</string>
     <string name="falha_logar_fb">Ocorreu um erro ao Logar usando o FaceBook!</string>
+    <string name="msg_mes_informativo">Selecione o mês para o informativo!</string>
 
 
     //Chaves
@@ -163,7 +164,7 @@
         <item>Chipre</item>
         <item>Clipperton Island</item>
         <item>Colômbia</item>
-        <item>Comores</item>
+        <item>Comarões</item>
         <item>Congo-Brazzaville</item>
         <item>Congo-Kinshasa</item>
         <item>Coral Sea Islands</item>
