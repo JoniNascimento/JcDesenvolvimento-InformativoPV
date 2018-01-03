@@ -1,5 +1,6 @@
 package com.jcdesenvolvimento.informativopv.Fragment;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -16,12 +17,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
 
 import com.jcdesenvolvimento.informativopv.Bd.CRUD;
 import com.jcdesenvolvimento.informativopv.Model.Boletim;
 import com.jcdesenvolvimento.informativopv.R;
 import com.jcdesenvolvimento.informativopv.Util.Constants;
 import com.jcdesenvolvimento.informativopv.Util.Functions;
+import com.jcdesenvolvimento.informativopv.Util.NumberPickerToStringPicker;
 
 import java.util.Calendar;
 
@@ -107,7 +110,7 @@ public class InformativoFragment extends Fragment implements View.OnClickListene
         btnSalvar.setOnClickListener(this);
 
         cal = Calendar.getInstance();
-        iMonth = cal.get(Calendar.MONTH);
+       // iMonth = cal.get(Calendar.MONTH);
         iYear = cal.get(Calendar.YEAR);
 
         loadExtra();
@@ -174,11 +177,35 @@ public class InformativoFragment extends Fragment implements View.OnClickListene
     }
 
     public void  createObj(){
+        constants = new Constants();
         if (objInformativo == null){
             objInformativo = new Boletim();
+
+            final Dialog dialog = new Dialog(getActivity());
+            dialog.setContentView(R.layout.dialog_mes);
+            NumberPicker npMes = (NumberPicker) dialog.findViewById(R.id.np_meses);
+            //Classe que configura o Pincker para aparecer String
+            NumberPickerToStringPicker numberPickerToStringPicker = new NumberPickerToStringPicker();
+            //metodo para configurar o Picker passando ele mesmo como paramentro
+            npMes = numberPickerToStringPicker.getStringPicker(npMes,constants.MESES);
+
+            Button btnOK = (Button) dialog.findViewById(R.id.btn_ok_mes);
+            final NumberPicker finalNpMes = npMes;
+            btnOK.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //pega o valor selecionado
+                  iMonth = finalNpMes.getValue();
+                    //fecha o dialog
+                  dialog.dismiss();;
+                }
+            });
+            dialog.show();
+
+
             objInformativo.setiMes(iMonth);
             objInformativo.setiAno(iYear);
-            constants = new Constants();
+
             String sTitulo = constants.MESES[iMonth].toString()+" / "+Integer.toString(iYear);
             objInformativo.setTitulo(sTitulo);
         }

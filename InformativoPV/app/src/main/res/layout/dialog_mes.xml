@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <NumberPicker
+        android:id="@+id/np_meses"
+        android:layout_width="match_parent"
+        android:layout_height="119dp" />
+
+    <Button
+        android:id="@+id/btn_ok_mes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bkg_botao_salvar"
+        android:text="@string/tOK" />
+</LinearLayout>
