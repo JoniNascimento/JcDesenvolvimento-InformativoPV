@@ -1,5 +1,6 @@
 package com.jcdesenvolvimento.informativopv.Fragment;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,12 +13,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.NumberPicker;
 
 import com.jcdesenvolvimento.informativopv.Adapter.InformativoAdapter;
 import com.jcdesenvolvimento.informativopv.Bd.BD;
 import com.jcdesenvolvimento.informativopv.Bd.CRUD;
 import com.jcdesenvolvimento.informativopv.Model.Boletim;
 import com.jcdesenvolvimento.informativopv.R;
+import com.jcdesenvolvimento.informativopv.Util.Constants;
+import com.jcdesenvolvimento.informativopv.Util.NumberPickerToStringPicker;
 
 import java.util.List;
 import java.util.zip.Inflater;
@@ -89,8 +94,8 @@ public class ListaInformativoFragment extends Fragment implements View.OnClickLi
         rvInformativos = (RecyclerView) v.findViewById(R.id.rv_lista_informativos);
         rvInformativos.setHasFixedSize(true);
 
-        GridLayoutManager GLM = new GridLayoutManager(getContext(),2);
-        GLM.setOrientation(GridLayoutManager.HORIZONTAL);
+        GridLayoutManager GLM = new GridLayoutManager(getActivity(),2);
+        GLM.setOrientation(GridLayoutManager.VERTICAL);
 
         informativoAdapterdapter = new InformativoAdapter(getContext(),listainformativos);
         rvInformativos.setAdapter(informativoAdapterdapter);
@@ -130,12 +135,45 @@ public class ListaInformativoFragment extends Fragment implements View.OnClickLi
     }
 
     public void mudaFragment(){
-        FragmentManager fm = getActivity().getSupportFragmentManager();
-        InformativoFragment informativoFragment = new InformativoFragment();
 
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.rl_container_fragment,  informativoFragment);
-        ft.commit();
+        final Dialog dialog = new Dialog(getActivity());
+        //deixa fundo do Dialog transparente
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.setContentView(R.layout.dialog_mes);
+        NumberPicker npMes = (NumberPicker) dialog.findViewById(R.id.np_meses);
+        //Classe que configura o Pincker para aparecer String
+        NumberPickerToStringPicker numberPickerToStringPicker = new NumberPickerToStringPicker();
+        //metodo para configurar o Picker passando ele mesmo como paramentro
+        Constants constants = new Constants();
+        npMes = numberPickerToStringPicker.getStringPicker(npMes,constants.MESES);
+
+        Button btnOK = (Button) dialog.findViewById(R.id.btn_ok_mes);
+        final NumberPicker finalNpMes = npMes;
+        btnOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //pega o valor selecionado
+                int tmpInt = finalNpMes.getValue();
+
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                InformativoFragment informativoFragment = new InformativoFragment();
+                //Cria Bundle para passar info para outro fragment
+                Bundle bundle = new Bundle();
+                bundle.putInt("mes", tmpInt);
+                informativoFragment.setArguments(bundle);
+
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.rl_container_fragment,  informativoFragment);
+                ft.commit();
+
+                //fecha o dialog
+                dialog.dismiss();
+
+            }
+        });
+        dialog.show();
+
+
     }
 
     /**

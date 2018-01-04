@@ -138,7 +138,7 @@ public class CRUD {
         List<Boletim> list = new ArrayList<Boletim>();
         String[] colunas = new String[]{"_id","IdIgreja", "Titulo","Mes", "Ano", "Palavra","Tema", "Imagem"}; //String de colunas da busca
 
-        Cursor cursor = bd.query("Boletim",colunas,null,null,null,null,"");
+        Cursor cursor = bd.query("Boletim",colunas,null,null,null,null,"_id desc");
 
         if (cursor.getCount() > 0 ){
             cursor.moveToFirst();

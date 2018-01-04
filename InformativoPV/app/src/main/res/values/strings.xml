@@ -29,6 +29,7 @@
     <string name="tInfo">Informações</string>
     <string name="tSalvar">Salvar</string>
     <string name="tOK">Ok</string>
+    <string name="tMesDialog">Selecione o Mês</string>
     <string name="txSobre">Aplicativo desenvolvido por JC Desenvolvimento.</string>
 
 
@@ -61,7 +62,7 @@
     <string name="falha_excluir_presente">Ocorreu um erro ao excluir o presente!</string>
     <string name="sucesso_excluir_presente">O presente foi excluido com sucesso!</string>
     <string name="falha_gravar_contato">Ocorreu um erro ao adicionar o contato!</string>
-    <string name="sucesso_gravar_contato">O contato foi adicionado com sucesso!</string>
+    <string name="sucesso_gravar_boletim">Informativo criado com sucesso!</string>
     <string name="falha_gravar_perfil">Ocorreu um erro ao salvar o perfil!</string>
     <string name="sucesso_gravar_perfil">O seu perfil foi salvo com sucesso!</string>
     <string name="falha_logar_fb">Ocorreu um erro ao Logar usando o FaceBook!</string>

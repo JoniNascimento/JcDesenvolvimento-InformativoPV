@@ -27,7 +27,11 @@ public class Functions {
 
     //converte byte para bitmap
     public Bitmap byteToBitmap(byte[] imgBytes){
-
-        return  BitmapFactory.decodeByteArray(imgBytes,0,imgBytes.length);
+        if (imgBytes != null) {
+            return BitmapFactory.decodeByteArray(imgBytes, 0, imgBytes.length);
+        }
+        else{
+            return null;
+        }
     }
 }

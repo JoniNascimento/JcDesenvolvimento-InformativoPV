@@ -61,7 +61,7 @@ public class EBAdapter extends RecyclerView.Adapter<EBAdapter.EBViewHolder> {
 
         public EBViewHolder(View itemView) {
             super(itemView);
-            tvCoodenacaoEB = (TextView) itemView.findViewById(R.id.tv_direcao_eb);
+            tvCoodenacaoEB = (TextView) itemView.findViewById(R.id.tv_coordenacao_eb);
             tvSecretariaEB = (TextView) itemView.findViewById(R.id.tv_secretaria_eb);
             tvOfertaEB = (TextView) itemView.findViewById(R.id.tv_oferta_eb);
             tvProfessorEB = (TextView) itemView.findViewById(R.id.tv_professor_eb);

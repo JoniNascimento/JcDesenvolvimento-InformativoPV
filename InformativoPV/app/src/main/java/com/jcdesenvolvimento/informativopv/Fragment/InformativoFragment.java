@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.SyncStateContract;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
+import android.widget.Toast;
 
 import com.jcdesenvolvimento.informativopv.Bd.CRUD;
 import com.jcdesenvolvimento.informativopv.Model.Boletim;
@@ -138,12 +141,27 @@ public class InformativoFragment extends Fragment implements View.OnClickListene
             case R.id.btn_salvar_informativo:
                 CRUD crud = new CRUD(getActivity());
                 crud.insertBoletim(objInformativo);
+                Toast.makeText(getActivity(),getString(R.string.sucesso_gravar_boletim),Toast.LENGTH_LONG).show();
+                loadInformativo();
                 break;
             case R.id.img_titulo_informativo:
                 getImgStorage();
                 break;
         }
 
+    }
+
+    public void loadInformativo(){
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+         MenuFragment menuFragment = new MenuFragment();
+        //Cria Bundle para passar info para outro fragment
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("objBoletim", objInformativo);
+        menuFragment.setArguments(bundle);
+
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.rl_container_fragment,  menuFragment);
+        ft.commit();
     }
 
     @Override
@@ -168,8 +186,8 @@ public class InformativoFragment extends Fragment implements View.OnClickListene
 
     public void loadExtra(){
         Bundle extras = getArguments();
-
-        if (extras != null){
+        iMonth = extras.getInt("mes");
+        if (extras.getSerializable("obj") != null){
           objInformativo = (Boletim) extras.getSerializable("obj");
         }else{
             createObj();
@@ -177,35 +195,12 @@ public class InformativoFragment extends Fragment implements View.OnClickListene
     }
 
     public void  createObj(){
-        constants = new Constants();
+
         if (objInformativo == null){
             objInformativo = new Boletim();
-
-            final Dialog dialog = new Dialog(getActivity());
-            dialog.setContentView(R.layout.dialog_mes);
-            NumberPicker npMes = (NumberPicker) dialog.findViewById(R.id.np_meses);
-            //Classe que configura o Pincker para aparecer String
-            NumberPickerToStringPicker numberPickerToStringPicker = new NumberPickerToStringPicker();
-            //metodo para configurar o Picker passando ele mesmo como paramentro
-            npMes = numberPickerToStringPicker.getStringPicker(npMes,constants.MESES);
-
-            Button btnOK = (Button) dialog.findViewById(R.id.btn_ok_mes);
-            final NumberPicker finalNpMes = npMes;
-            btnOK.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //pega o valor selecionado
-                  iMonth = finalNpMes.getValue();
-                    //fecha o dialog
-                  dialog.dismiss();;
-                }
-            });
-            dialog.show();
-
-
             objInformativo.setiMes(iMonth);
             objInformativo.setiAno(iYear);
-
+            constants = new Constants();
             String sTitulo = constants.MESES[iMonth].toString()+" / "+Integer.toString(iYear);
             objInformativo.setTitulo(sTitulo);
         }
